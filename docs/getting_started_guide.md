@@ -1,4 +1,4 @@
-# VectorBlox 3.1 Discovery Kit Getting Started Guide
+# VectorBlox 3.1.1 Discovery Kit Getting Started Guide
 
 This guide offers step-by-step instructions for configuring the Discovery Kit for VectorBlox and running neural network inference on an image using a model compiled with the [VectorBlox SDK](https://github.com/Microchip-Vectorblox/VectorBlox-SDK).
 
@@ -159,7 +159,7 @@ After writing the image to the microSD card:
 
 ---
 
-## Step 3: Download the VectorBlox 3.1 SDK to the Discovery Kit or Use disco-quickstart.sh
+## Step 3: Download the VectorBlox 3.1.1 SDK to the Discovery Kit or Use disco-quickstart.sh
 
 > **All commands in this step are run on the Discovery Kit** (via the serial terminal or SSH), not on the host PC.
 
@@ -177,11 +177,11 @@ bash disco-quickstart.sh
 **Option B: Download and Extract the SDK and Continue to Step 4**
 
 ```bash
-wget --no-check-certificate https://github.com/Microchip-Vectorblox/VectorBlox-SDK/archive/refs/tags/release-v3.1.zip
-unzip release-v3.1.zip
+wget --no-check-certificate https://github.com/Microchip-Vectorblox/VectorBlox-SDK/archive/refs/tags/release-v3.1.1.zip
+unzip release-v3.1.1.zip
 ```
 
-The SDK will be extracted to the `VectorBlox-SDK-release-v3.1/` directory.
+The SDK will be extracted to the `VectorBlox-SDK-release-v3.1.1/` directory.
 
 ---
 
@@ -227,32 +227,32 @@ ls /usr/lib*/libjpeg.*
 
 ---
 
-## Step 5: Compile Networks with the VectorBlox 3.1 SDK
+## Step 5: Compile Networks with the VectorBlox 3.1.1 SDK
 
 > **Important:** Models requiring more than 32 MB of contiguous DMA allocation will not run on the Discovery Kit. The current Yocto image limits allocations to 32 MB chunks (from approximately 128 MB of non-cached DMA). Use smaller models such as `mobilenet_v2`.
 
-**Option A: Use Pre-Compiled samples_V500_NCOMP_3.1.zip**
+**Option A: Use Pre-Compiled samples_V500_NCOMP_3.1.1.zip**
 
 > **All commands in Step 5 option A are run on the Discovery Kit.**
 
-A precompiled `mobilenet_v2_V500_ncomp.vnnx` is included in the release assets of this repository within `samples_V500_NCOMP_3.1.zip`. Run the following commands on the Discovery Kit to download and extract `samples_V500_NCOMP_3.1` to the root directory.
+A precompiled `mobilenet_v2_V500_ncomp.vnnx` is included in the release assets of this repository within `samples_V500_NCOMP_3.1.1.zip`. Run the following commands on the Discovery Kit to download and extract `samples_V500_NCOMP_3.1.1` to the root directory.
 
 ```bash
-wget --no-check-certificate https://github.com/Microchip-Vectorblox/VectorBlox-Discovery-Kit-Reference-Design/releases/download/release-v3.1/samples_V500_NCOMP_3.1.zip
+wget --no-check-certificate https://github.com/Microchip-Vectorblox/VectorBlox-Discovery-Kit-Reference-Design/releases/download/release-v3.1.1/samples_V500_NCOMP_3.1.1.zip
 
-unzip samples_V500_NCOMP_3.1.zip
+unzip samples_V500_NCOMP_3.1.1.zip
 ```
 
-**Option B: Compile Networks with the VectorBlox 3.1 SDK**
+**Option B: Compile Networks with the VectorBlox 3.1.1 SDK**
 
-1. On a host PC with the VectorBlox 3.1 SDK installed, compile a network using the `V500` and `ncomp` arguments (for example, `tensorflow/mobilenet_v2`). This will generate a `.vnnx` file. For more information, see the [VectorBlox SDK](https://github.com/Microchip-Vectorblox/VectorBlox-SDK).
+1. On a host PC with the VectorBlox 3.1.1 SDK installed, compile a network using the `V500` and `ncomp` arguments (for example, `tensorflow/mobilenet_v2`). This will generate a `.vnnx` file. For more information, see the [VectorBlox SDK](https://github.com/Microchip-Vectorblox/VectorBlox-SDK).
 2. Find the IP address of the Discovery Kit over UART terminal with the 'ifconfig' command
-3. Transfer the `.vnnx` file to the Discovery Kit, placing it in a folder such as `~/samples_V500_NCOMP_3.1/` using WinSCP or `scp` using the board IP address.
+3. Transfer the `.vnnx` file to the Discovery Kit, placing it in a folder such as `~/samples_V500_NCOMP_3.1.1/` using WinSCP or `scp` using the board IP address.
 
 Example `scp` command to transfer compiled model from SDK to Discovery Kit:
 
 ```bash
-scp samples_V500_NCOMP_3.1/mobilenet_v2_V500_ncomp.vnnx root@BOARD_IP:/home/root/samples_V500_NCOMP_3.1
+scp samples_V500_NCOMP_3.1.1/mobilenet_v2_V500_ncomp.vnnx root@BOARD_IP:/home/root/samples_V500_NCOMP_3.1.1
 ```
 
 ---
@@ -264,7 +264,7 @@ scp samples_V500_NCOMP_3.1/mobilenet_v2_V500_ncomp.vnnx root@BOARD_IP:/home/root
 **Navigate to the `soc-c` Directory and Build the Application as Follows:**
 
 ```bash
-cd VectorBlox-SDK-release-v3.1/example/soc-c
+cd VectorBlox-SDK-release-v3.1.1/example/soc-c
 make clean
 make kit=discovery
 make overlay
@@ -273,7 +273,7 @@ make overlay
 **Run with Test Data (No Post-Processing):**
 
 ```bash
-./run-model ~/samples_V500_NCOMP_3.1/mobilenet_v2_V500_ncomp.vnnx
+./run-model ~/samples_V500_NCOMP_3.1.1/mobilenet_v2_V500_ncomp.vnnx
 ```
 
 <details>
@@ -286,7 +286,7 @@ make overlay
 **Run with an Image and Classification Post-Processing:**
 
 ```bash
-./run-model ~/samples_V500_NCOMP_3.1/mobilenet_v2_V500_ncomp.vnnx ../../tutorials/test_images/oreo.jpg CLASSIFY
+./run-model ~/samples_V500_NCOMP_3.1.1/mobilenet_v2_V500_ncomp.vnnx ../../tutorials/test_images/oreo.jpg CLASSIFY
 ```
 
 <details>

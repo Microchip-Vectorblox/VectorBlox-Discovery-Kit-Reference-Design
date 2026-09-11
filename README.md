@@ -1,4 +1,4 @@
-# PolarFire&reg; SoC Discovery Kit VectorBlox 3.1 Reference Design
+# PolarFire&reg; SoC Discovery Kit VectorBlox 3.1.1 Reference Design
 
 This repository contains a simple reference design for running VectorBlox on the Discovery Kit.  
 
@@ -24,7 +24,7 @@ Please refer to the **[Discovery Kit Getting Started Guide](./docs/getting_start
 - [Discovery Kit Quickstart Guide](https://www.microchip.com/content/dam/mchp/documents/FPGA/ProductDocuments/ProductBrief/50003565_MPFS-Disco-Kit_QuickStart_Guide.pdf) — Covers driver installation, board connection, power-up, and UART communication. **Disregard the DSP FIR Filter demonstration section**, which is not relevant to the VectorBlox setup.
 - [VectorBlox SDK](https://github.com/Microchip-Vectorblox/VectorBlox-SDK) — Instructions for compiling models for target hardware.
 - [VectorBlox Tutorials](https://github.com/Microchip-Vectorblox/VectorBlox-SDK/tree/master/tutorials) — Shell scripts for compiling popular pretrained models. To generate binaries compatible with the Discovery Kit, modify `vnnx_compile` to use `-s V500` instead of `-s V1000`. **Note: not all tutorials are supported on the Discovery Kit.**
-- [Resource Utilization](https://github.com/Microchip-Vectorblox/VectorBlox-SDK/blob/master/docs/resource_utilization.md) - Refer to this for FPGA resource utilization numbers for the VBX v3.1 core.
+- [Resource Utilization](https://github.com/Microchip-Vectorblox/VectorBlox-SDK/blob/master/docs/resource_utilization.md) - Refer to this for FPGA resource utilization numbers for the VBX core.
 - [CoreVectorBlox IP Handbook](https://github.com/Microchip-Vectorblox/VectorBlox-SDK/blob/master/docs/CoreVectorBlox_IP_Handbook.pdf) - Please refer to the CoreVectorBlox IP Handbook PDF within the docs folder of our SDK for more information about the VectorBlox core.
 - [manual_HSS_update](./docs/manual_HSS_update.md) - Provides information on manually updating HSS within Libero. Use this if changing the Yocto Linux image.
 - [core_configuration](./docs/core_configuration.md) -  Provides information on changing the core configuration for smaller hardware sizes. This is useful when modifying the reference design.
