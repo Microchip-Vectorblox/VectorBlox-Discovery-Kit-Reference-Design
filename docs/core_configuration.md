@@ -11,7 +11,7 @@ To modify the script, replace the contents of `script_support/additional_configu
 # Family: PolarFireSoC
 # Part Number: MPFS250T_ES-FCVG484E
 # Create and Configure the core component core_vectorblox_C0
-create_and_configure_core -core_vlnv {Microchip:SolutionCore:core_vectorblox:3.1.001} -component_name {core_vectorblox_C0} -params {\
+create_and_configure_core -core_vlnv {Microchip:SolutionCore:core_vectorblox:3.2.002} -component_name {core_vectorblox_C0} -params {\
 "M0_AXI_DATA_WIDTH:128"  \
 "M1_AXI_DATA_WIDTH:128"  \
 "M_AXI_PORTS:1"  \

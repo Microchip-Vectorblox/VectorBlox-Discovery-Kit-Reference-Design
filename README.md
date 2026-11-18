@@ -1,4 +1,4 @@
-# PolarFire&reg; SoC Discovery Kit VectorBlox 3.1.1 Reference Design
+# PolarFire&reg; SoC Discovery Kit VectorBlox 3.2 Reference Design
 
 This repository contains a simple reference design for running VectorBlox on the Discovery Kit.  
 
@@ -36,3 +36,4 @@ Please refer to the **[Discovery Kit Getting Started Guide](./docs/getting_start
 - Large networks are not currently supported due to limitations in the current Yocto image.
 
 ---
+
